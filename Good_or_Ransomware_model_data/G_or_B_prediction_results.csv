@@ -1,0 +1,11 @@
+API:CoInitializeEx,REG:OPENED:HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\,API:NtReadVirtualMemory,FILES_EXT:WRITTEN:tmp,DROP:tmp,API:CreateDirectoryW,API:GetFileSize,API:GetFileAttributesW,FILES_EXT:OPENED:exe,API:GetFileSize.1,Predictions
+0,0,0,0,0,0,0,0,0,0,Ransomware
+0,0,1,0,0,0,1,0,1,1,Ransomware
+1,1,1,1,1,1,1,1,1,1,Goodware
+1,1,1,1,1,1,1,1,1,1,Goodware
+1,1,0,1,1,1,1,1,1,1,Goodware
+0,0,0,0,0,0,0,1,0,0,Ransomware
+0,0,0,1,1,1,1,1,1,1,Ransomware
+1,1,1,1,1,1,1,1,1,1,Goodware
+1,1,1,1,1,1,1,0,0,1,Goodware
+1,0,0,1,1,0,1,1,0,1,Ransomware

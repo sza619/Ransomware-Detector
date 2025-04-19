@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ransomware</title>
+    <link rel="stylesheet" type="text/css" href="slide navbar style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+
+          body{
+      <!--	margin: 0;-->
+      <!--	padding: 0;-->
+      <!--	display: flex;-->
+      <!--	justify-content: center;-->
+      	align-items: center;
+      	min-height: 100vh;
+      	font-family: 'Jost', sans-serif;
+      	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      }
+      .topnav-right {
+        float: right;
+      }
+      .topnav {
+        overflow: hidden;
+        background-color:  #0f0c29;
+      }
+
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 style="font-family: Times New Roman; color: white">
+        Ransomware Detection and Behavioral Analysis
+      </h1>
+    </div>
+
+    <br />
+    <div class="topnav">
+      <div class="topnav-right">
+        <a href="/homepage">Home</a>
+        <a href="/dataupload">Upload Dataset</a>
+        <a href="/modelcreation">View Model</a>
+        <a href="/randompredict">Ransomware Predict </a>
+        <a href="/rfamilypredict">Ransomware Family Predict</a>
+        <a href="/viewgraph">Evaluation Matrix</a>
+      </div>
+    </div>
+    <div>
+      <div
+        style="font-family: Times New Roman; color: white; text-align: center"
+      >
+        <form action="{% url 'randompredict' %}" method="POST">
+          {% csrf_token %}
+          <h3 style="text-align: center; color: white">
+            Ransomware Attack Detection
+          </h3>
+          <br />
+          <input type="file" id="myFile" name="myFile" /><br /><br /><br />
+          <input type="submit" />
+          <br /><br />
+          <table border="1">
+            <thead>
+              <tr>
+                {% for key in data.0.keys %}
+                <th>{{ key }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in data %}
+              <tr>
+                {% for value in row.values %}
+                <td>{{ value }}</td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </tbody>
+                
+          </table>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

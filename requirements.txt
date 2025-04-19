@@ -1,0 +1,7 @@
+Django>=3.0
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+tensorflow==2.13.0

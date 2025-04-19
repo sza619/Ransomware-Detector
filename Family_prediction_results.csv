@@ -1,0 +1,25 @@
+API:CoInitializeEx,REG:OPENED:HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\,API:NtReadVirtualMemory,FILES_EXT:WRITTEN:tmp,DROP:tmp,API:CreateDirectoryW,API:GetFileSize,API:GetFileAttributesW,FILES_EXT:OPENED:exe,API:GetFileSize.1,label,Predicted_Class,Type,Prevention
+0,0,0,0,0,0,0,0,0,0,1,5,Kovter,"Use reputable security software, avoid clicking on suspicious links or ads, and regularly update systems."
+0,0,1,0,0,0,1,0,1,1,1,6,Locker,"Regularly back up data, employ strong authentication measures, and educate users about phishing attacks."
+1,1,1,1,1,1,1,1,1,1,0,0,Goodware,Ensure downloading software only from trusted sources. Regularly update and patch all software to prevent vulnerabilities.
+1,1,1,1,1,1,1,1,1,1,0,0,Goodware,Ensure downloading software only from trusted sources. Regularly update and patch all software to prevent vulnerabilities.
+1,1,0,1,1,1,1,1,1,1,0,0,Goodware,Ensure downloading software only from trusted sources. Regularly update and patch all software to prevent vulnerabilities.
+0,0,0,0,0,0,0,1,0,0,1,9,Reveton,"Employ strong security software, do not pay ransoms, and seek professional help if infected."
+0,0,0,1,1,1,1,1,1,1,1,1,Critroni,"Regularly back up data, use reliable security software, and avoid clicking on suspicious links or downloading attachments from unknown sources."
+1,1,1,1,1,1,1,1,1,1,0,0,Goodware,Ensure downloading software only from trusted sources. Regularly update and patch all software to prevent vulnerabilities.
+1,0,0,0,0,0,1,0,0,1,1,7,MATSNU,"Update Windows systems regularly, use strong antivirus software, and be cautious of suspicious emails."
+0,0,0,0,0,0,0,0,0,0,1,5,Kovter,"Use reputable security software, avoid clicking on suspicious links or ads, and regularly update systems."
+0,0,0,0,1,1,1,1,1,1,0,0,Goodware,Ensure downloading software only from trusted sources. Regularly update and patch all software to prevent vulnerabilities.
+0,0,0,0,0,0,0,0,0,0,1,5,Kovter,"Use reputable security software, avoid clicking on suspicious links or ads, and regularly update systems."
+0,0,0,0,0,0,0,1,0,0,1,9,Reveton,"Employ strong security software, do not pay ransoms, and seek professional help if infected."
+0,0,1,0,0,0,0,0,0,0,1,6,Locker,"Regularly back up data, employ strong authentication measures, and educate users about phishing attacks."
+1,0,0,0,1,1,1,1,1,1,0,0,Goodware,Ensure downloading software only from trusted sources. Regularly update and patch all software to prevent vulnerabilities.
+1,1,1,1,1,1,1,1,1,1,0,0,Goodware,Ensure downloading software only from trusted sources. Regularly update and patch all software to prevent vulnerabilities.
+1,0,1,0,0,1,1,1,1,1,0,0,Goodware,Ensure downloading software only from trusted sources. Regularly update and patch all software to prevent vulnerabilities.
+0,0,0,0,0,0,1,1,0,1,1,1,Critroni,"Regularly back up data, use reliable security software, and avoid clicking on suspicious links or downloading attachments from unknown sources."
+0,0,0,0,0,0,0,0,1,0,1,2,CryptLocker,"Keep software and operating systems updated, use strong passwords, and avoid opening suspicious email attachments."
+0,0,1,0,0,0,1,0,1,1,1,6,Locker,"Regularly back up data, employ strong authentication measures, and educate users about phishing attacks."
+1,1,1,1,1,1,1,1,1,1,0,0,Goodware,Ensure downloading software only from trusted sources. Regularly update and patch all software to prevent vulnerabilities.
+1,1,1,1,1,1,1,1,1,1,0,0,Goodware,Ensure downloading software only from trusted sources. Regularly update and patch all software to prevent vulnerabilities.
+1,1,1,1,1,1,1,1,1,1,0,0,Goodware,Ensure downloading software only from trusted sources. Regularly update and patch all software to prevent vulnerabilities.
+1,0,1,0,1,0,1,0,1,0,1,11,Trojan-Ransom,"Regularly update antivirus software, avoid suspicious links, and use firewalls."
