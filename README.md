@@ -13,7 +13,7 @@ This project is a Django-based web application designed to detect potential rans
 
 ## ⚙️ Tech Stack
 
-- Python
+- Python (https://www.python.org/downloads/release/python-3100/)
 - Django
 - TensorFlow / Keras
 - Scikit-learn
