@@ -1,81 +1,128 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Ransomware</title>
-	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ransomware</title>
     {% load static %}
-<style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --vermillion: #e34234;
+        --black: #000000;
+        --white: #ffffff;
+        --gray-bg: #f9f9f9;
+      }
 
-    body{
-<!--	margin: 0;-->
-<!--	padding: 0;-->
-<!--	display: flex;-->
-<!--	justify-content: center;-->
-	align-items: center;
-	min-height: 100vh;
-	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-}
-.topnav-right {
-  float: right;
-}
-.topnav {
-  overflow: hidden;
-  background-color:  #0f0c29;
-}
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--white);
+        color: var(--black);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+      .navbar {
+        width: 100%;
+        background-color: var(--black);
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem 2rem;
+      }
 
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-</style>
+      .navbar a {
+        color: var(--white);
+        text-decoration: none;
+        margin-left: 1.5rem;
+        font-weight: 500;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+        padding-bottom: 2px;
+      }
 
-</head>
-<body>
-<div >
-<h1 style=" font-family: Times New Roman; color:white;">Ransomware Detection and Behavioral Analysis</h1>
+      .navbar a:hover {
+        color: var(--vermillion);
+        border-bottom: 2px solid var(--vermillion);
+      }
 
-</div>
+      .container {
+        max-width: 900px;
+        width: 100%;
+        padding: 2rem;
+        text-align: center;
+      }
 
-<br/>
-<div class="topnav">
-<div class="topnav-right">
-  <a  href="/homepage">Home</a>
-  <a href="/dataupload">Upload Dataset</a>
-  <a href="/modelcreation">View Model</a>
-  <a href="/randompredict">Ransomware Predict </a>
-    <a href="/rfamilypredict">Ransomware Family Predict</a>
-     <a href="/viewgraph">Evaluation Matrix</a>
-</div>
-</div>
-<div style=" font-family: Times New Roman; color:white;text-align: center;">
-    <h2 style=";text-align: left;">Evaluation Matrix</h2>
-<p>
-    <h2>Accuracy </h2>
-    <img src="{% static 'images/accuracy.png' %}" alt="Accuracy" style="width:50%;">
-</p>
-<p>
-<h2>Loss </h2>
-    <img src="{% static 'images/Loss.png' %}" alt="Loss" style="width:50%;"></p>
-    <p>
-<h2>Confusion Matrix </h2>
-    <img src="{% static 'images/ConfusionMatrix.png' %}" alt="CM" style="width:50%;">
-</p>
-</div>
-</body>
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        color: var(--vermillion);
+        margin-top: 2rem;
+        font-size: 1.5rem;
+      }
+
+      img {
+        width: 60%;
+        max-width: 100%;
+        margin: 1rem 0;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: var(--gray-bg);
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+
+        .navbar a {
+          margin: 0.5rem 0;
+        }
+
+        img {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/homepage">Home</a>
+      <a href="/modelcreation">View Model</a>
+      <a href="/randompredict">Ransomware Predict</a>
+      <a href="/rfamilypredict">Family Predict</a>
+      <a href="/viewgraph">Evaluation Matrix</a>
+    </nav>
+
+    <div class="container">
+      <h1>Ransomware Detection and Behavioral Analysis</h1>
+
+      <h2 style="text-align: left">Evaluation Matrix</h2>
+
+      <h2>Accuracy</h2>
+      <img src="{% static 'images/accuracy.png' %}" alt="Accuracy" />
+
+      <h2>Loss</h2>
+      <img src="{% static 'images/Loss.png' %}" alt="Loss" />
+
+      <h2>Confusion Matrix</h2>
+      <img
+        src="{% static 'images/ConfusionMatrix.png' %}"
+        alt="Confusion Matrix"
+      />
+    </div>
+  </body>
 </html>

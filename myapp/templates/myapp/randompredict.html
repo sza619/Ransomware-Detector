@@ -1,104 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <title>Ransomware</title>
-    <link rel="stylesheet" type="text/css" href="slide navbar style.css" />
+    {% load static %}
     <link
-      href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <style>
-
-          body{
-      <!--	margin: 0;-->
-      <!--	padding: 0;-->
-      <!--	display: flex;-->
-      <!--	justify-content: center;-->
-      	align-items: center;
-      	min-height: 100vh;
-      	font-family: 'Jost', sans-serif;
-      	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-      }
-      .topnav-right {
-        float: right;
-      }
-      .topnav {
-        overflow: hidden;
-        background-color:  #0f0c29;
+      :root {
+        --vermillion: #e34234;
+        --black: #000000;
+        --white: #ffffff;
+        --gray-bg: #f9f9f9;
       }
 
-      .topnav a {
-        float: left;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--white);
+        color: var(--black);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar {
+        width: 100%;
+        background-color: var(--black);
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem 2rem;
+      }
+
+      .navbar a {
+        color: var(--white);
         text-decoration: none;
-        font-size: 17px;
+        margin-left: 1.5rem;
+        font-weight: 500;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+        padding-bottom: 2px;
       }
 
-      .topnav a:hover {
-        background-color: #ddd;
-        color: black;
+      .navbar a:hover {
+        color: var(--vermillion);
+        border-bottom: 2px solid var(--vermillion);
       }
 
-      .topnav a.active {
-        background-color: #04AA6D;
-        color: white;
+      .container {
+        max-width: 900px;
+        width: 100%;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        color: var(--black);
+      }
+
+      h3 {
+        color: var(--vermillion);
+        margin-bottom: 1rem;
+      }
+
+      input[type="file"] {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 60%;
+        margin: 1rem auto;
+        display: block;
+      }
+
+      input[type="submit"] {
+        background-color: var(--vermillion);
+        color: var(--white);
+        border: none;
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #c62d24;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2rem;
+        font-size: 0.95rem;
+        background-color: var(--gray-bg);
+      }
+
+      th,
+      td {
+        padding: 12px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+
+      th {
+        background-color: var(--vermillion);
+        color: var(--white);
+      }
+
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+
+        .navbar a {
+          margin: 0.5rem 0;
+        }
+
+        input[type="file"] {
+          width: 100%;
+        }
       }
     </style>
   </head>
   <body>
-    <div>
-      <h1 style="font-family: Times New Roman; color: white">
-        Ransomware Detection and Behavioral Analysis
-      </h1>
-    </div>
+    <nav class="navbar">
+      <a href="/homepage">Home</a>
+      <a href="/modelcreation">View Model</a>
+      <a href="/randompredict">Ransomware Predict</a>
+      <a href="/rfamilypredict">Family Predict</a>
+      <a href="/viewgraph">Evaluation Matrix</a>
+    </nav>
 
-    <br />
-    <div class="topnav">
-      <div class="topnav-right">
-        <a href="/homepage">Home</a>
-        <a href="/dataupload">Upload Dataset</a>
-        <a href="/modelcreation">View Model</a>
-        <a href="/randompredict">Ransomware Predict </a>
-        <a href="/rfamilypredict">Ransomware Family Predict</a>
-        <a href="/viewgraph">Evaluation Matrix</a>
-      </div>
-    </div>
-    <div>
-      <div
-        style="font-family: Times New Roman; color: white; text-align: center"
+    <div class="container">
+      <h1>Ransomware Detection and Behavioral Analysis</h1>
+
+      <form
+        action="{% url 'randompredict' %}"
+        method="POST"
+        enctype="multipart/form-data"
       >
-        <form action="{% url 'randompredict' %}" method="POST">
-          {% csrf_token %}
-          <h3 style="text-align: center; color: white">
-            Ransomware Attack Detection
-          </h3>
-          <br />
-          <input type="file" id="myFile" name="myFile" /><br /><br /><br />
-          <input type="submit" />
-          <br /><br />
-          <table border="1">
-            <thead>
-              <tr>
-                {% for key in data.0.keys %}
-                <th>{{ key }}</th>
-                {% endfor %}
-              </tr>
-            </thead>
-            <tbody>
-              {% for row in data %}
-              <tr>
-                {% for value in row.values %}
-                <td>{{ value }}</td>
-                {% endfor %}
-              </tr>
+        {% csrf_token %}
+        <h3>Ransomware Attack Detection</h3>
+
+        <input type="file" id="myFile" name="myFile" required />
+        <br />
+        <input type="submit" value="Predict" />
+
+        {% if data %}
+        <table>
+          <thead>
+            <tr>
+              {% for key in data.0.keys %}
+              <th>{{ key }}</th>
               {% endfor %}
-            </tbody>
-                
-          </table>
-        </form>
-      </div>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in data %}
+            <tr>
+              {% for value in row.values %}
+              <td>{{ value }}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+      </form>
     </div>
   </body>
 </html>
